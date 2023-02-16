@@ -1,4 +1,26 @@
 ﻿using TesteBanco; 
+string opcao;
+List<Cliente> clientes = new List<Cliente>();  
+do {
+Console.WriteLine("Bem-vindo ao banco CODex, escolha uma opção"); 
+Console.WriteLine("1- Criar conta"); 
+Console.WriteLine("2- Adicionar transação"); 
+Console.WriteLine("3-Consultar extrato"); 
+Console.WriteLine("4-Sair");
+Console.WriteLine("5-Exibir clientes"); 
+opcao = Console.ReadLine(); 
+if (opcao=="1") {
+Cliente novoCliente = CriarConta(); 
+clientes.Add(novoCliente); 
+}
+} while (opcao !="3"); 
+void ExibirClientes() {
+  for(int i = 0; i<clientes.Count; i++) 
+  {
+    Console.WriteLine($"{clientes[i].Nome} / {clientes[i].CPF} / {clientes[i].Email}"); 
+  }
+}
+
 Cliente CriarConta(){
   Cliente cliente = new Cliente(); 
 
@@ -27,14 +49,4 @@ Cliente CriarConta(){
   cliente.Saldo=double.Parse(Console.ReadLine());
   return cliente; 
 }
-string opcao; 
-do {
-Console.WriteLine("Bem-vindo ao banco CODex, escolha uma opção"); 
-Console.WriteLine("1- Criar conta"); 
-Console.WriteLine("2- Adicionar transação"); 
-Console.WriteLine("3-Consultar extrato"); 
-Console.WriteLine("4-Sair"); 
-opcao = Console.ReadLine(); 
-if (opcao=="1") {
-Cliente novoCliente = CriarConta(); }
-} while (opcao !="3"); 
+

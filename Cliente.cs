@@ -16,5 +16,8 @@ namespace TesteBanco
         public int NumeroConta { get; set; }
         public double Saldo { get; set; }
         //public List<Transacao> Extrato { get; set; }
+        public string ResumoCliente(){
+           return $"{Nome} {CPF} {Email}"; 
+        }
     }
 }

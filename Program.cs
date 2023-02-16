@@ -1,6 +1,7 @@
 ﻿using TesteBanco; 
 string opcao;
 List<Cliente> clientes = new List<Cliente>();  
+
 do {
 Console.WriteLine("Bem-vindo ao banco CODex, escolha uma opção"); 
 Console.WriteLine("1- Criar conta"); 
@@ -13,8 +14,16 @@ if (opcao=="1") {
 Cliente novoCliente = CriarConta(); 
 clientes.Add(novoCliente); 
 }
+if (opcao =="5"){
+  ExibirClientes(); 
+}
 } while (opcao !="3"); 
+
+Console.WriteLine("Tecle Enter para continuar"); 
+Console.ReadLine(); 
+
 void ExibirClientes() {
+  Console.WriteLine("Nome------------------CPF-------------------Email"); 
   for(int i = 0; i<clientes.Count; i++) 
   {
     Console.WriteLine($"{clientes[i].Nome} / {clientes[i].CPF} / {clientes[i].Email}"); 

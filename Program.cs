@@ -3,7 +3,7 @@ string opcao;
 List<Cliente> clientes = new List<Cliente>();  
 
 do {
-Console.WriteLine("Bem-vindo ao banco CODex, escolha uma opção"); 
+Console.WriteLine("Bem-vindo ao banco CODex, escolha a opção desejada"); 
 Console.WriteLine("1- Criar conta"); 
 Console.WriteLine("2- Adicionar transação"); 
 Console.WriteLine("3-Consultar extrato"); 
